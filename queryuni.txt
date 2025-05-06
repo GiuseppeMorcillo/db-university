@@ -1,0 +1,8 @@
+1-SELECT * FROM demo_db.students where year(date_of_birth) = 1990
+2-SELECT * FROM demo_db.courses where cfu>10;
+3-SELECT * FROM demo_db.students WHERE DATEDIFF(CURDATE(), date_of_birth) > 365 * 30;
+4-SELECT * FROM demo_db.courses where period = 'I semestre' and year = 1;
+5-SELECT * FROM demo_db.exams where date='2020-06-20' and hour > '14:00:00';
+6-SELECT * FROM demo_db.degrees where level = 'magistrale';
+7-SELECT * FROM demo_db.departments;
+8-SELECT * FROM demo_db.teachers where phone IS NULL;
