@@ -1,0 +1,15 @@
+1-SELECT * FROM demo_db.degrees
+JOIN departments on department_id = departments.id
+WHERE departments.name="Dipartimento di Scienze economiche e aziendali";
+2-SELECT * FROM degrees
+JOIN departments ON department_id = departments.id
+WHERE level = 'magistrale' and departments.name = "Dipartimento di Neuroscienze"
+3-SELECT c.*
+FROM courses c
+JOIN course_teacher ct ON c.id = ct.course_id
+WHERE ct.teacher_id = 44;
+4-SELECT s.name, s.surname, d.name AS degree_name, dep.name AS department_name
+FROM students s
+JOIN degrees d ON s.degree_id = d.id
+JOIN departments dep ON d.department_id = dep.id
+ORDER BY s.surname, s.name;
