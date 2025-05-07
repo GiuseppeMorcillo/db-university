@@ -13,3 +13,21 @@ FROM students s
 JOIN degrees d ON s.degree_id = d.id
 JOIN departments dep ON d.department_id = dep.id
 ORDER BY s.surname, s.name;
+5-SELECT deg.name AS degree_name, c.name AS course_name, t.name AS teacher_name, t.surname AS teacher_surname
+FROM degrees deg
+JOIN courses c ON c.degree_id = deg.id
+JOIN course_teacher ct ON ct.course_id = c.id
+JOIN teachers t ON ct.teacher_id = t.id;
+6-SELECT t.*
+FROM teachers t
+JOIN course_teacher ct ON t.id = ct.teacher_id
+JOIN courses c ON ct.course_id = c.id
+JOIN degrees d ON c.degree_id = d.id
+JOIN departments dep ON d.department_id = dep.id
+WHERE dep.name = 'Dipartimento di Matematica';
+7-SELECT student_id, exam_id,
+       COUNT(*) AS attempts,
+       MAX(vote) AS max_vote
+FROM exam_student
+WHERE vote >= 18
+GROUP BY student_id, exam_id;
